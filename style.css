@@ -116,7 +116,7 @@ body {
 }
 
 .jumplink.pic:hover {
-    border-color: #6b48ff;
+    border-color: #ff0000;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
