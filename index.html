@@ -1,149 +1,46 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>MD Blog</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MD Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-preload">
 
-        <!-- Wrapper-->
-            <div id="wrapper">
+    <div id="wrapper">
 
-                <!-- Nav -->
-                    <nav id="nav">
-                        <a href="#home" class="icon solid fa-home"><span>Home</span></a>
-                        <a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-                        <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-                        <a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
-                    </nav>
+        <!-- Nav (only Home) -->
+        <nav id="nav">
+            <a href="#home">Home</a>
+        </nav>
 
-                <!-- Main -->
-                    <div id="main">
+        <!-- Main (only Home) -->
+        <div id="main">
+            <article id="home" class="panel intro">
+                <header>
+                    <h1>Muhammad Dauood</h1>
+                    <p>Cyber Security Graduate</p>
+                </header>
 
-                        <!-- Me -->
-                            <article id="home" class="panel intro">
-                                <header>
-                                    <h1>Muhammad Dauood</h1>
-                                    <p>Cyber Security Graduate</p>
-                                </header>
-                                <a href="#work" class="jumplink pic">
-                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Jane Doe" />
-                                </a>
-                                <!-- Added extra content to make home page scrollable -->
-                                <div style="height: 1200px;"></div>
-                            </article>
+                <a class="jumplink pic" href="#">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=688&q=80" alt="Profile" />
+                </a>
 
-                        <!-- Work -->
-                            <article id="work" class="panel">
-                                <header>
-                                    <h2>Work</h2>
-                                </header>
-                                <p>
-                                    Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
-                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                                    luctus elit eget interdum.
-                                </p>
-                                <section>
-                                    <div class="row">
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 1"></a>
-                                        </div>
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 2"></a>
-                                        </div>
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 3"></a>
-                                        </div>
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 4"></a>
-                                        </div>
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 5"></a>
-                                        </div>
-                                        <div class="col-4 col-6-medium col-12-small">
-                                            <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 6"></a>
-                                        </div>
-                                    </div>
-                                </section>
-                            </article>
+                <!-- Extra vertical space so the homepage is taller and scrollable -->
+                <div style="height:1200px;"></div>
+            </article>
+        </div>
 
-                        <!-- Contact -->
-                            <article id="contact" class="panel">
-                                <header>
-                                    <h2>Contact Me</h2>
-                                </header>
-                                <form action="#" method="post">
-                                    <div class="form-row">
-                                        <div class="col-6 col-12-medium">
-                                            <div class="form-group">
-                                                <input type="text" name="name" placeholder="Name" />
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-12-medium">
-                                            <div class="form-group">
-                                                <input type="text" name="email" placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <input type="text" name="subject" placeholder="Subject" />
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <textarea name="message" placeholder="Message" rows="6"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <input type="submit" value="Send Message" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </article>
+        <!-- Footer -->
+        <div id="footer">
+            <ul class="copyright">
+                <li>&copy; Untitled.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
 
-                    </div>
+    </div>
 
-                <!-- Footer -->
-                    <div id="footer">
-                        <ul class="copyright">
-                            <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                        </ul>
-                    </div>
-
-            </div>
-
-        <!-- Scripts -->
-            <script>
-                // Simple JavaScript to handle panel navigation
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Handle navigation clicks
-                    const navLinks = document.querySelectorAll('#nav a');
-                    
-                    navLinks.forEach(link => {
-                        link.addEventListener('click', function(e) {
-                            if(this.getAttribute('href').startsWith('#')) {
-                                const targetId = this.getAttribute('href').substring(1);
-                                const panels = document.querySelectorAll('.panel');
-                                
-                                panels.forEach(panel => {
-                                    panel.style.display = 'none';
-                                });
-                                
-                                if(targetId) {
-                                    const targetPanel = document.getElementById(targetId);
-                                    if(targetPanel) {
-                                        targetPanel.style.display = 'block';
-                                    }
-                                }
-                            }
-                        });
-                    });
-                });
-            </script>
-
-    </body>
+</body>
 </html>
