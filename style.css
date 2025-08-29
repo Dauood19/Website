@@ -14,11 +14,11 @@ body {
     font-size: 16px;
 }
 
-/* Wrapper */
+/* Wrapper - fill full viewport width, use flex to push footer to bottom */
 #wrapper {
     min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
 }
@@ -58,17 +58,18 @@ body {
 
 /* Main Content */
 #main {
-    flex: 1 0 auto;
-    padding-top: 90px; /* space for fixed nav */
-    padding-bottom: 80px;
+    flex: 1 0 auto;              /* grow to fill available space so footer stays at bottom */
+    padding-top: 100px;          /* space for fixed nav */
+    padding-bottom: 40px;
     width: 100%;
 }
 
-/* Panels (only home now) */
+/* Panels - center content and allow full-bleed background outside panel */
 .panel {
     display: block;
     width: 100%;
-    margin: 0 auto;
+    max-width: 1100px;           /* max width for content block */
+    margin: 30px auto;           /* center horizontally */
     padding: 40px;
 }
 
@@ -79,10 +80,10 @@ body {
     color: white;
     border-radius: 20px;
     padding: 80px 40px;
-    margin: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
+/* Headings */
 .panel.intro header h1 {
     font-size: 3.5rem;
     margin-bottom: 15px;
@@ -95,6 +96,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* Profile image */
 .jumplink.pic {
     display: inline-block;
     margin-top: 40px;
@@ -114,11 +116,11 @@ body {
     display: block;
     width: 350px;
     height: auto;
+    max-width: 90vw;
 }
 
-/* Footer */
+/* Footer - normal document flow (not fixed). will sit at page bottom when content shorter than viewport because wrapper is min-height:100vh and #main flexes */
 #footer {
-    /* keep footer in normal flow so it sits after page content (not fixed to viewport) */
     position: relative;
     width: 100%;
     background: #333;
@@ -128,12 +130,16 @@ body {
     margin-top: 40px;
 }
 
-copyright {
+/* copyright class fix */
+.copyright {
+    list-style: none;
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+    display: inline-block;
+    padding: 0 12px;
 }
 
-copyright a {
+.copyright a {
     color: #ff4e7d;
     text-decoration: none;
     font-weight: 600;
@@ -143,11 +149,12 @@ copyright a {
 @media (max-width: 1024px) {
     .panel {
         padding: 30px;
+        max-width: 900px;
     }
 
     .panel.intro {
         padding: 60px 30px;
-        margin: 20px;
+        margin: 20px auto;
     }
 
     .panel.intro header h1 {
@@ -172,7 +179,7 @@ copyright a {
 
     .panel.intro {
         padding: 50px 20px;
-        margin: 15px;
+        margin: 15px auto;
     }
 
     .panel.intro header h1 {
