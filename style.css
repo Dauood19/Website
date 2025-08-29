@@ -12,15 +12,15 @@ body {
     background: #f7f9fc;
     overflow-x: hidden;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Wrapper - fill full viewport width, use flex to push footer to bottom */
 #wrapper {
-    min-height: 100vh;
+    flex: 1;
     width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Navigation (only Home link) */
@@ -58,29 +58,25 @@ body {
 
 /* Main Content */
 #main {
-    flex: 1 0 auto;              /* grow to fill available space so footer stays at bottom */
     padding-top: 100px;          /* space for fixed nav */
     padding-bottom: 40px;
     width: 100%;
 }
 
-/* Panels - center content and allow full-bleed background outside panel */
+/* Panels - now full width */
 .panel {
     display: block;
     width: 100%;
-    max-width: 1100px;           /* max width for content block */
-    margin: 30px auto;           /* center horizontally */
+    margin: 30px 0;
     padding: 40px;
 }
 
-/* Home Section */
+/* Home Section - now full width */
 .panel.intro {
     text-align: center;
     background: linear-gradient(135deg, #6b48ff, #ff4e7d);
     color: white;
-    border-radius: 20px;
     padding: 80px 40px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* Headings */
@@ -119,15 +115,14 @@ body {
     max-width: 90vw;
 }
 
-/* Footer - normal document flow (not fixed). will sit at page bottom when content shorter than viewport because wrapper is min-height:100vh and #main flexes */
+/* Footer - now always at bottom */
 #footer {
-    position: relative;
     width: 100%;
     background: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
+    margin-top: auto; /* Pushes footer to bottom */
 }
 
 /* copyright class fix */
@@ -149,12 +144,11 @@ body {
 @media (max-width: 1024px) {
     .panel {
         padding: 30px;
-        max-width: 900px;
     }
 
     .panel.intro {
         padding: 60px 30px;
-        margin: 20px auto;
+        margin: 20px 0;
     }
 
     .panel.intro header h1 {
@@ -179,7 +173,7 @@ body {
 
     .panel.intro {
         padding: 50px 20px;
-        margin: 15px auto;
+        margin: 15px 0;
     }
 
     .panel.intro header h1 {
@@ -200,6 +194,10 @@ body {
         margin: 0 5px;
         padding: 8px 12px;
         font-size: 0.9rem;
+    }
+
+    .panel.intro {
+        padding: 50px 15px;
     }
 
     .panel.intro header h1 {
