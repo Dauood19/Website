@@ -150,12 +150,6 @@ body {
     overflow: hidden; /* Hides both scrollbars */
 }
 
-/* Or hide specific scrollbars */
-.element-class {
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    overflow-y: hidden; /* Hide vertical scrollbar */
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
     .panel {
