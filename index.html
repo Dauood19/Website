@@ -9,8 +9,138 @@
 		<title>MD Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Basic reset and styling */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				overflow-x: hidden;
+				background: #f7f7f7;
+			}
+			
+			/* Navigation */
+			#nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background: #333;
+				color: white;
+				display: flex;
+				justify-content: center;
+				z-index: 1000;
+				padding: 15px 0;
+			}
+			
+			#nav a {
+				color: white;
+				text-decoration: none;
+				margin: 0 15px;
+				display: flex;
+				align-items: center;
+			}
+			
+			#nav a span {
+				margin-left: 5px;
+			}
+			
+			/* Main content */
+			#main {
+				margin-top: 60px;
+				padding: 20px;
+			}
+			
+			.panel {
+				display: none;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+				background: white;
+				border-radius: 5px;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+			
+			#home {
+				display: block; /* Show home panel by default */
+				text-align: center;
+			}
+			
+			.intro header {
+				margin-bottom: 30px;
+			}
+			
+			.intro img {
+				max-width: 300px;
+				border-radius: 5px;
+				margin-top: 20px;
+			}
+			
+			/* Work section */
+			.image.fit {
+				display: block;
+				margin-bottom: 15px;
+			}
+			
+			.image.fit img {
+				width: 100%;
+				height: auto;
+				border-radius: 5px;
+			}
+			
+			/* Contact form */
+			form input, form textarea {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 15px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+			
+			form input[type="submit"] {
+				background: #333;
+				color: white;
+				border: none;
+				cursor: pointer;
+				padding: 12px;
+			}
+			
+			/* Footer */
+			#footer {
+				text-align: center;
+				padding: 20px;
+				margin-top: 30px;
+				background: #333;
+				color: white;
+			}
+			
+			/* Responsive grid */
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0 -10px;
+			}
+			
+			.col-4 {
+				width: 33.333%;
+				padding: 10px;
+			}
+			
+			/* Simple JavaScript functionality for panel switching */
+			.panel:target {
+				display: block;
+			}
+			
+			.panel:target ~ #home {
+				display: none;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,7 +149,7 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#home" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
@@ -36,7 +166,7 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
+									<img src="https://via.placeholder.com/500x300" alt="Profile Image" />
 								</a>
 							</article>
 
@@ -53,40 +183,22 @@
 								<section>
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
 										</div>
 									</div>
 								</section>
@@ -132,11 +244,33 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script>
+				// Simple JavaScript to handle panel navigation
+				document.addEventListener('DOMContentLoaded', function() {
+					// Handle navigation clicks
+					const navLinks = document.querySelectorAll('#nav a');
+					
+					navLinks.forEach(link => {
+						link.addEventListener('click', function(e) {
+							if(this.getAttribute('href').startsWith('#')) {
+								const targetId = this.getAttribute('href').substring(1);
+								const panels = document.querySelectorAll('.panel');
+								
+								panels.forEach(panel => {
+									panel.style.display = 'none';
+								});
+								
+								if(targetId) {
+									const targetPanel = document.getElementById(targetId);
+									if(targetPanel) {
+										targetPanel.style.display = 'block';
+									}
+								}
+							}
+						});
+					});
+				});
+			</script>
 
 	</body>
 </html>
