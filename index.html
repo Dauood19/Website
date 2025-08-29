@@ -1,146 +1,12 @@
 <!DOCTYPE HTML>
-<!--
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>MD Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<style>
-			/* Basic reset and styling */
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			
-			body {
-				font-family: Arial, sans-serif;
-				line-height: 1.6;
-				color: #333;
-				overflow-x: hidden;
-				background: #f7f7f7;
-			}
-			
-			/* Navigation */
-			#nav {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				background: #333;
-				color: white;
-				display: flex;
-				justify-content: center;
-				z-index: 1000;
-				padding: 15px 0;
-			}
-			
-			#nav a {
-				color: white;
-				text-decoration: none;
-				margin: 0 15px;
-				display: flex;
-				align-items: center;
-			}
-			
-			#nav a span {
-				margin-left: 5px;
-			}
-			
-			/* Main content */
-			#main {
-				margin-top: 60px;
-				padding: 20px;
-			}
-			
-			.panel {
-				display: none;
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 20px;
-				background: white;
-				border-radius: 5px;
-				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-			}
-			
-			#home {
-				display: block; /* Show home panel by default */
-				text-align: center;
-			}
-			
-			.intro header {
-				margin-bottom: 30px;
-			}
-			
-			.intro img {
-				max-width: 300px;
-				border-radius: 5px;
-				margin-top: 20px;
-			}
-			
-			/* Work section */
-			.image.fit {
-				display: block;
-				margin-bottom: 15px;
-			}
-			
-			.image.fit img {
-				width: 100%;
-				height: auto;
-				border-radius: 5px;
-			}
-			
-			/* Contact form */
-			form input, form textarea {
-				width: 100%;
-				padding: 10px;
-				margin-bottom: 15px;
-				border: 1px solid #ddd;
-				border-radius: 4px;
-			}
-			
-			form input[type="submit"] {
-				background: #333;
-				color: white;
-				border: none;
-				cursor: pointer;
-				padding: 12px;
-			}
-			
-			/* Footer */
-			#footer {
-				text-align: center;
-				padding: 20px;
-				margin-top: 30px;
-				background: #333;
-				color: white;
-			}
-			
-			/* Responsive grid */
-			.row {
-				display: flex;
-				flex-wrap: wrap;
-				margin: 0 -10px;
-			}
-			
-			.col-4 {
-				width: 33.333%;
-				padding: 10px;
-			}
-			
-			/* Simple JavaScript functionality for panel switching */
-			.panel:target {
-				display: block;
-			}
-			
-			.panel:target ~ #home {
-				display: none;
-			}
-		</style>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -151,6 +17,7 @@
 					<nav id="nav">
 						<a href="#home" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
+						<a href="#blog" class="icon solid fa-newspaper"><span>Blog</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
 					</nav>
@@ -166,67 +33,93 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="https://via.placeholder.com/500x300" alt="Profile Image" />
+									<img src="images/me.jpg" alt="Jane Doe" />
 								</a>
 							</article>
 
 						<!-- Work -->
 							<article id="work" class="panel">
 								<header>
-									<h2>Work</h2>
+									<h2>My Portfolio</h2>
 								</header>
 								<p>
-									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
-									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-									luctus elit eget interdum.
+									Welcome to my creative portfolio. Here you'll find a selection of my recent work in astral projection and consciousness exploration.
 								</p>
 								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
+									<div class="gallery">
+										<div class="gallery-item">
+											<a href="#" class="image fit"><img src="images/pic01.jpg" alt="Project 1"></a>
+											<h3>Cosmic Journey</h3>
+											<p>Exploring the outer realms of consciousness</p>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
+										<div class="gallery-item">
+											<a href="#" class="image fit"><img src="images/pic02.jpg" alt="Project 2"></a>
+											<h3>Dream Weaving</h3>
+											<p>Creating tapestries of dream energy</p>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
+										<div class="gallery-item">
+											<a href="#" class="image fit"><img src="images/pic03.jpg" alt="Project 3"></a>
+											<h3>Stellar Meditation</h3>
+											<p>Connecting with celestial energies</p>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="https://via.placeholder.com/300x200" alt="Work sample"></a>
+										<div class="gallery-item">
+											<a href="#" class="image fit"><img src="images/pic04.jpg" alt="Project 4"></a>
+											<h3>Astral Navigation</h3>
+											<p>Charting courses through spiritual dimensions</p>
 										</div>
 									</div>
 								</section>
+							</article>
+							
+						<!-- Blog -->
+							<article id="blog" class="panel">
+								<header>
+									<h2>Latest Posts</h2>
+								</header>
+								<div class="blog-posts">
+									<article class="blog-post">
+										<h3>Understanding Astral Projection</h3>
+										<p class="post-meta">Posted on June 12, 2023</p>
+										<p>Astral projection, also known as an out-of-body experience, is a phenomenon where one's consciousness or awareness seems to separate from the physical body...</p>
+										<a href="#" class="read-more">Read more</a>
+									</article>
+									<article class="blog-post">
+										<h3>Meditation Techniques for Beginners</h3>
+										<p class="post-meta">Posted on May 28, 2023</p>
+										<p>Starting a meditation practice can seem daunting, but with these simple techniques, you'll be on your way to inner peace in no time...</p>
+										<a href="#" class="read-more">Read more</a>
+									</article>
+									<article class="blog-post">
+										<h3>The Science of Consciousness</h3>
+										<p class="post-meta">Posted on April 15, 2023</p>
+										<p>What exactly is consciousness? Scientists and philosophers have debated this question for centuries. In this post, we explore current theories...</p>
+										<a href="#" class="read-more">Read more</a>
+									</article>
+								</div>
 							</article>
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>
-									<h2>Contact Me</h2>
+									<h2>Get In Touch</h2>
+									<p>I'd love to hear from you! Send me a message using the form below.</p>
 								</header>
 								<form action="#" method="post">
-									<div>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<input type="submit" value="Send Message" />
-											</div>
+									<div class="form-grid">
+										<div class="form-group">
+											<input type="text" name="name" placeholder="Your Name" />
+										</div>
+										<div class="form-group">
+											<input type="text" name="email" placeholder="Your Email" />
+										</div>
+										<div class="form-group full-width">
+											<input type="text" name="subject" placeholder="Subject" />
+										</div>
+										<div class="form-group full-width">
+											<textarea name="message" placeholder="Your Message" rows="6"></textarea>
+										</div>
+										<div class="form-group full-width">
+											<input type="submit" value="Send Message" />
 										</div>
 									</div>
 								</form>
@@ -237,40 +130,24 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Jane Doe 2023</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
+						<div class="social-links">
+							<a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+							<a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+							<a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+							<a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a>
+						</div>
 					</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script>
-				// Simple JavaScript to handle panel navigation
-				document.addEventListener('DOMContentLoaded', function() {
-					// Handle navigation clicks
-					const navLinks = document.querySelectorAll('#nav a');
-					
-					navLinks.forEach(link => {
-						link.addEventListener('click', function(e) {
-							if(this.getAttribute('href').startsWith('#')) {
-								const targetId = this.getAttribute('href').substring(1);
-								const panels = document.querySelectorAll('.panel');
-								
-								panels.forEach(panel => {
-									panel.style.display = 'none';
-								});
-								
-								if(targetId) {
-									const targetPanel = document.getElementById(targetId);
-									if(targetPanel) {
-										targetPanel.style.display = 'block';
-									}
-								}
-							}
-						});
-					});
-				});
-			</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
