@@ -74,12 +74,22 @@ body {
     padding: 40px;
 }
 
-/* Home Section - now full width */
+/* Home Section - removed gradient background */
 .panel.intro {
     text-align: center;
-    background: linear-gradient(135deg, #6b48ff, #ff4e7d);
-    color: white;
+    background: transparent;
+    color: #333;
     padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Centered content container */
+.centered-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Headings */
@@ -87,12 +97,13 @@ body {
     font-size: 3.5rem;
     margin-bottom: 15px;
     font-weight: 700;
+    color: #2c3e50;
 }
 
 .panel.intro header p {
     font-size: 1.5rem;
-    opacity: 0.9;
     margin-bottom: 30px;
+    color: #7f8c8d;
 }
 
 /* Profile image */
@@ -100,7 +111,7 @@ body {
     display: inline-block;
     margin-top: 40px;
     position: relative;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(107, 72, 255, 0.3);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -111,6 +122,12 @@ body {
     width: 350px;
     height: auto;
     max-width: 90vw;
+}
+
+.jumplink.pic:hover {
+    border-color: #6b48ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer - now always at bottom */
