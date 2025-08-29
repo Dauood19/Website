@@ -118,13 +118,13 @@ body {
 
 /* Footer */
 #footer {
-    position: static;
+    /* keep footer in normal flow so it sits after page content (not fixed to viewport) */
+    position: relative;
     width: 100%;
     background: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
-    z-index: 1000;
     margin-top: 40px;
 }
 
