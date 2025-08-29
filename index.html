@@ -4,9 +4,312 @@
 		<title>MD Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/custom.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Reset and Base Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: #f7f9fc;
+				overflow-x: hidden;
+			}
+			
+			/* Wrapper */
+			#wrapper {
+				position: relative;
+				min-height: 100vh;
+			}
+			
+			/* Navigation */
+			#nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background: rgba(255, 255, 255, 0.95);
+				display: flex;
+				justify-content: center;
+				padding: 15px 0;
+				z-index: 1000;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			
+			#nav a {
+				color: #6b48ff;
+				text-decoration: none;
+				margin: 0 15px;
+				display: flex;
+				align-items: center;
+				font-weight: 600;
+				padding: 8px 15px;
+				border-radius: 20px;
+				transition: all 0.3s ease;
+			}
+			
+			#nav a:hover {
+				background: #6b48ff;
+				color: white;
+			}
+			
+			#nav a span {
+				margin-left: 8px;
+			}
+			
+			/* Main Content */
+			#main {
+				padding-top: 70px;
+				padding-bottom: 60px;
+			}
+			
+			.panel {
+				display: none;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+			
+			#home {
+				display: block;
+			}
+			
+			/* Home Section */
+			.panel.intro {
+				text-align: center;
+				background: linear-gradient(135deg, #6b48ff, #ff4e7d);
+				color: white;
+				border-radius: 15px;
+				padding: 50px 30px;
+				margin: 20px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+			}
+			
+			.panel.intro header h1 {
+				font-size: 3rem;
+				margin-bottom: 10px;
+			}
+			
+			.panel.intro header p {
+				font-size: 1.2rem;
+				opacity: 0.9;
+			}
+			
+			.jumplink.pic {
+				display: inline-block;
+				margin-top: 30px;
+				position: relative;
+				border: 3px solid rgba(255, 255, 255, 0.5);
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			
+			.jumplink.pic img {
+				display: block;
+				max-width: 300px;
+				height: auto;
+			}
+			
+			.arrow {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				background: rgba(0, 0, 0, 0.7);
+				color: white;
+				padding: 10px 15px;
+				font-size: 0.9rem;
+			}
+			
+			/* Work Section */
+			#work {
+				background: white;
+				border-radius: 15px;
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+				margin: 20px;
+			}
+			
+			#work header {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			
+			#work header h2 {
+				color: #6b48ff;
+				font-size: 2.5rem;
+				margin-bottom: 15px;
+			}
+			
+			#work p {
+				color: #666;
+				font-size: 1.1rem;
+				max-width: 800px;
+				margin: 0 auto 30px;
+				line-height: 1.8;
+			}
+			
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0 -15px;
+			}
+			
+			.col-4 {
+				flex: 0 0 33.333%;
+				padding: 15px;
+				max-width: 33.333%;
+			}
+			
+			.image.fit {
+				display: block;
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease;
+			}
+			
+			.image.fit:hover {
+				transform: translateY(-5px);
+			}
+			
+			.image.fit img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+			
+			/* Contact Section */
+			#contact {
+				background: white;
+				border-radius: 15px;
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+				margin: 20px;
+			}
+			
+			#contact header {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			
+			#contact header h2 {
+				color: #6b48ff;
+				font-size: 2.5rem;
+				margin-bottom: 15px;
+			}
+			
+			form {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			
+			.form-row {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0 -10px;
+			}
+			
+			.col-6 {
+				flex: 0 0 50%;
+				padding: 0 10px;
+				max-width: 50%;
+			}
+			
+			.col-12 {
+				flex: 0 0 100%;
+				padding: 0 10px;
+				max-width: 100%;
+			}
+			
+			.form-group {
+				margin-bottom: 20px;
+			}
+			
+			input, textarea {
+				width: 100%;
+				padding: 12px 15px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				font-family: inherit;
+				font-size: 1rem;
+				transition: border-color 0.3s ease;
+			}
+			
+			input:focus, textarea:focus {
+				outline: none;
+				border-color: #6b48ff;
+			}
+			
+			textarea {
+				min-height: 150px;
+				resize: vertical;
+			}
+			
+			input[type="submit"] {
+				background: #6b48ff;
+				color: white;
+				border: none;
+				font-weight: 600;
+				cursor: pointer;
+				padding: 15px;
+				transition: background 0.3s ease;
+			}
+			
+			input[type="submit"]:hover {
+				background: #5a3fe0;
+			}
+			
+			/* Footer */
+			#footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background: #333;
+				color: white;
+				text-align: center;
+				padding: 15px 0;
+				z-index: 1000;
+			}
+			
+			.copyright {
+				margin-bottom: 10px;
+			}
+			
+			.copyright a {
+				color: #ff4e7d;
+				text-decoration: none;
+			}
+			
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.col-4, .col-6 {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+				
+				#nav a {
+					margin: 0 5px;
+					padding: 6px 10px;
+					font-size: 0.9rem;
+				}
+				
+				.panel.intro header h1 {
+					font-size: 2.2rem;
+				}
+			}
+			
+			/* Simple JavaScript functionality for panel switching */
+			.panel:target {
+				display: block;
+			}
+			
+			.panel:target ~ #home {
+				display: none;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -17,7 +320,6 @@
 					<nav id="nav">
 						<a href="#home" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#blog" class="icon solid fa-newspaper"><span>Blog</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
 					</nav>
@@ -33,93 +335,75 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="Jane Doe" />
+									<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Jane Doe" />
 								</a>
 							</article>
 
 						<!-- Work -->
 							<article id="work" class="panel">
 								<header>
-									<h2>My Portfolio</h2>
+									<h2>Work</h2>
 								</header>
 								<p>
-									Welcome to my creative portfolio. Here you'll find a selection of my recent work in astral projection and consciousness exploration.
+									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
+									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+									luctus elit eget interdum.
 								</p>
 								<section>
-									<div class="gallery">
-										<div class="gallery-item">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt="Project 1"></a>
-											<h3>Cosmic Journey</h3>
-											<p>Exploring the outer realms of consciousness</p>
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 1"></a>
 										</div>
-										<div class="gallery-item">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt="Project 2"></a>
-											<h3>Dream Weaving</h3>
-											<p>Creating tapestries of dream energy</p>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 2"></a>
 										</div>
-										<div class="gallery-item">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt="Project 3"></a>
-											<h3>Stellar Meditation</h3>
-											<p>Connecting with celestial energies</p>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 3"></a>
 										</div>
-										<div class="gallery-item">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt="Project 4"></a>
-											<h3>Astral Navigation</h3>
-											<p>Charting courses through spiritual dimensions</p>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 4"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 5"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Work sample 6"></a>
 										</div>
 									</div>
 								</section>
-							</article>
-							
-						<!-- Blog -->
-							<article id="blog" class="panel">
-								<header>
-									<h2>Latest Posts</h2>
-								</header>
-								<div class="blog-posts">
-									<article class="blog-post">
-										<h3>Understanding Astral Projection</h3>
-										<p class="post-meta">Posted on June 12, 2023</p>
-										<p>Astral projection, also known as an out-of-body experience, is a phenomenon where one's consciousness or awareness seems to separate from the physical body...</p>
-										<a href="#" class="read-more">Read more</a>
-									</article>
-									<article class="blog-post">
-										<h3>Meditation Techniques for Beginners</h3>
-										<p class="post-meta">Posted on May 28, 2023</p>
-										<p>Starting a meditation practice can seem daunting, but with these simple techniques, you'll be on your way to inner peace in no time...</p>
-										<a href="#" class="read-more">Read more</a>
-									</article>
-									<article class="blog-post">
-										<h3>The Science of Consciousness</h3>
-										<p class="post-meta">Posted on April 15, 2023</p>
-										<p>What exactly is consciousness? Scientists and philosophers have debated this question for centuries. In this post, we explore current theories...</p>
-										<a href="#" class="read-more">Read more</a>
-									</article>
-								</div>
 							</article>
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>
-									<h2>Get In Touch</h2>
-									<p>I'd love to hear from you! Send me a message using the form below.</p>
+									<h2>Contact Me</h2>
 								</header>
 								<form action="#" method="post">
-									<div class="form-grid">
-										<div class="form-group">
-											<input type="text" name="name" placeholder="Your Name" />
+									<div class="form-row">
+										<div class="col-6 col-12-medium">
+											<div class="form-group">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
 										</div>
-										<div class="form-group">
-											<input type="text" name="email" placeholder="Your Email" />
+										<div class="col-6 col-12-medium">
+											<div class="form-group">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
 										</div>
-										<div class="form-group full-width">
-											<input type="text" name="subject" placeholder="Subject" />
+										<div class="col-12">
+											<div class="form-group">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
 										</div>
-										<div class="form-group full-width">
-											<textarea name="message" placeholder="Your Message" rows="6"></textarea>
+										<div class="col-12">
+											<div class="form-group">
+												<textarea name="message" placeholder="Message" rows="6"></textarea>
+											</div>
 										</div>
-										<div class="form-group full-width">
-											<input type="submit" value="Send Message" />
+										<div class="col-12">
+											<div class="form-group">
+												<input type="submit" value="Send Message" />
+											</div>
 										</div>
 									</div>
 								</form>
@@ -130,24 +414,40 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Jane Doe 2023</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
-						<div class="social-links">
-							<a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
-							<a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
-							<a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
-							<a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a>
-						</div>
 					</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script>
+				// Simple JavaScript to handle panel navigation
+				document.addEventListener('DOMContentLoaded', function() {
+					// Handle navigation clicks
+					const navLinks = document.querySelectorAll('#nav a');
+					
+					navLinks.forEach(link => {
+						link.addEventListener('click', function(e) {
+							if(this.getAttribute('href').startsWith('#')) {
+								const targetId = this.getAttribute('href').substring(1);
+								const panels = document.querySelectorAll('.panel');
+								
+								panels.forEach(panel => {
+									panel.style.display = 'none';
+								});
+								
+								if(targetId) {
+									const targetPanel = document.getElementById(targetId);
+									if(targetPanel) {
+										targetPanel.style.display = 'block';
+									}
+								}
+							}
+						});
+					});
+				});
+			</script>
 
 	</body>
 </html>
