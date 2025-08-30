@@ -69,12 +69,34 @@ button:hover, .btn:hover {
     background: #005fa3;
 }
 
+/* Make images smaller and align left */
+img {
+    max-width: 180px;
+    height: auto;
+    float: left;
+    margin-right: 2rem;
+    display: block;
+}
+
+/* Remove border and center name/role section */
+.profile-info {
+    text-align: center;
+    margin: 1.5rem 0 0 0;
+    border: none;
+    padding: 0;
+}
+
+/* Footer: central text, border, stick to bottom */
 footer {
     text-align: center;
     padding: 1.5rem 0;
     background: #e9ecf3;
     color: #555;
-    margin-top: 2rem;
     font-size: 0.95rem;
-    border-top: 1px solid #d3d8e3;
+    border-top: 2px solid #d3d8e3;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
 }
