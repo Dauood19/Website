@@ -1,221 +1,80 @@
-/* Reset and Base Styles */
-* {
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: #222;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f7f9fc;
-    overflow-x: hidden;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* This ensures body takes at least full viewport height */
-}
-
-/* Wrapper - fill full viewport width, use flex to push footer to bottom */
-#wrapper {
-    flex: 1; /* This makes the wrapper expand to push footer down */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Navigation (only Home link) */
-#nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#nav a {
-    color: #6b48ff;
-    text-decoration: none;
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    font-size: 1.1rem;
-}
-
-#nav a:hover {
-    background: #6b48ff;
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* Main Content */
-#main {
-    padding-top: 100px;          /* space for fixed nav */
-    padding-bottom: 40px;
-    width: 100%;
-    flex: 1; /* This ensures main content area expands */
-}
-
-/* Panels - now full width */
-.panel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 30px 0;
-    padding: 40px;
-    min-height: 70vh;
-}
-
-/* Centered content container */
-.centered-content {
+header {
+    background: #2d3e50;
+    color: #fff;
+    padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+nav a {
+    color: #2d3e50;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #0078d7;
+}
+
+main {
     max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 2rem;
 }
 
-/* Headings */
-.panel header h1 {
-    font-size: 3.5rem;
-    margin-top: -20px;
-    margin-bottom: 10px;
-    font-weight: 700;
-    color: #2c3e50;
+h1, h2, h3 {
+    color: #2d3e50;
+    margin-top: 0;
 }
 
-.panel header p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #7f8c8d;
+p {
+    line-height: 1.7;
+    margin: 1rem 0;
 }
 
-/* Profile image */
-.jumplink.pic {
-    display: inline-block;
-    margin-top: 40px;
-    position: relative;
-    border: 3px solid rgba(255, 72, 72, 0.3);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+ul, ol {
+    padding-left: 1.5rem;
 }
 
-.jumplink.pic img {
-    display: block;
-    width: 350px;
-    height: auto;
-    max-width: 90vw;
+button, .btn {
+    background: #0078d7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.jumplink.pic:hover {
-    border-color: #ff0000;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+button:hover, .btn:hover {
+    background: #005fa3;
 }
 
-/* Footer - now always at bottom */
-#footer {
-    width: 100%;
-    background: #333;
-    color: white;
+footer {
     text-align: center;
-    padding: 20px 0;
-    margin-top: auto; /* Pushes footer to bottom */
-}
-
-/* copyright class fix */
-.copyright {
-    list-style: none;
-    margin-bottom: 10px;
-    font-size: 1.0rem;
-    display: inline-block;
-    padding: 0 12px;
-}
-
-.copyright a {
-    color: #ff4e7d;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .panel {
-        padding: 30px;
-    }
-
-    .panel header h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 15px;
-    }
-
-    #nav {
-        padding: 15px 0;
-    }
-
-    #nav a {
-        margin: 0 10px;
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
-    .panel {
-        padding: 20px;
-        margin: 15px 0;
-    }
-
-    .panel header h1 {
-        font-size: 2.5rem;
-    }
-
-    .panel header p {
-        font-size: 1.3rem;
-    }
-
-    .jumplink.pic img {
-        width: 280px;
-    }
-}
-
-@media (max-width: 480px) {
-    #nav a {
-        margin: 0 5px;
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    .panel {
-        padding: 15px;
-    }
-
-    .panel header h1 {
-        font-size: 2rem;
-    }
-
-    .panel header p {
-        font-size: 1.1rem;
-    }
-
-    .jumplink.pic img {
-        width: 220px;
-    }
+    padding: 1.5rem 0;
+    background: #e9ecf3;
+    color: #555;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    border-top: 1px solid #d3d8e3;
 }
